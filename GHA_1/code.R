@@ -36,7 +36,7 @@ ggplot2::ggplot(data = data, mapping = ggplot2::aes(x=age, y=charges, color=smok
 
 
 # ---- exercise_5
-dynamic_plot <- function(data, x.variable, y.variable, color.variable) {
+dynamic_scatter_plot <- function(data, x.variable, y.variable, color.variable) {
    ggplot2::ggplot(data = data, 
                    mapping = ggplot2::aes_string(x=x.variable, 
                                                  y=y.variable, 
@@ -44,8 +44,18 @@ dynamic_plot <- function(data, x.variable, y.variable, color.variable) {
       ggplot2::geom_point()
 }
 
-dynamic_plot(data = data, 
-             x.variable = "bmi", 
-             y.variable = "charges", 
-             color.variable = "sex")
+dynamic_scatter_plot(data = data, 
+                     x.variable = "bmi", 
+                     y.variable = "charges", 
+                     color.variable = "sex")
 
+
+# ---- exercise_6
+dynamic_box_plot <- function(data, split.variable) {
+   ggplot2::ggplot(data = data, 
+                   mapping = ggplot2::aes_string(x=split.variable, y="bmi")) +
+      ggplot2::geom_boxplot()
+}
+
+dynamic_box_plot(data = data,
+                 split.variable = "region")

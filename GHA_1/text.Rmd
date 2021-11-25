@@ -70,3 +70,11 @@ risk of health problems. One might have expected the relationship to be even str
 It can be assumed that this can be explained by other covariates.
 ```{r exercise_5, echo=TRUE, warning=FALSE, fig.align='center'}
 ```
+
+# Exercise 6 {-}
+According to the boxplot below, the median body mass index is higher in the southern 
+regions than in the northern regions. The high median body mass index of the southeast 
+region is particularly striking. The median body mass index is above 24.9 (maximum 
+value of an ideal bmi) in all regions, which may be a cause for concern.
+```{r exercise_6, echo=TRUE, warning=FALSE, fig.align='center'}
+```
