@@ -1,3 +1,6 @@
+# Tex
+*.log
+
 # Mac
 .DS_Store
 

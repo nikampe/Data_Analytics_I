@@ -1,0 +1,34 @@
+---
+author: "Cyril Janak, Jonas Husmann, Niklas Kampe, Robin Scherrer"
+date: "13 5 2020"
+geometry: "left= 2cm, right = 2cm, top = 2.5cm, bottom = 2.5cm"
+output: 
+   pdf_document:
+      includes:
+         in_header: rmarkdown/style.sty
+      number_sections: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+knitr::read_chunk('code.R')
+```
+
+\thispagestyle{empty}
+\input{rmarkdown/titlepage.tex}
+
+\pagebreak
+
+\thispagestyle{empty}
+\tableofcontents
+
+\pagebreak
+\setcounter{page}{1}
+
+# Requirements {-}
+To solve the following tasks, the required library and the data set are loaded first. 
+The library *ggplot2* is used for plotting various graphics.
+```{r requirements, echo=TRUE, warning=FALSE}
+```
+
+# Exercise 1 {-}
