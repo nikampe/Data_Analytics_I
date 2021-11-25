@@ -37,3 +37,8 @@ number of covariates collected corresponds to the number of columns minus one
 (dependent variable). Thus there are 1204 observations and 6 covariates.
 ```{r exercise_1, echo=TRUE, warning=FALSE,}
 ```
+
+# Exercise 2 {-}
+The highest number of children who are covered by one health insurance is 5.
+```{r exercise_2, echo=TRUE, warning=FALSE,}
+```

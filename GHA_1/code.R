@@ -14,3 +14,7 @@ load("GHA/insurance-all.RData")
 # ---- exercise_1
 (n_obs <- nrow(data))
 (n_cov <- ncol(data) - 1)
+
+
+# ---- exercise_2
+(max_children <- max(data$children))
