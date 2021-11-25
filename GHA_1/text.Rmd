@@ -60,3 +60,13 @@ assumed that the area where the average medical costs billed by health insurance
 smokers and non-smokers overlap can be explained by other covariates.
 ```{r exercise_4, echo=TRUE, warning=FALSE, fig.align='center'}
 ```
+
+\pagebreak
+
+# Exercise 5 {-}
+The plot shows that the body mass index and the medical costs billed by health 
+insurance are positively related. This makes sense, as being overweight increases the 
+risk of health problems. One might have expected the relationship to be even stronger. 
+It can be assumed that this can be explained by other covariates.
+```{r exercise_5, echo=TRUE, warning=FALSE, fig.align='center'}
+```

@@ -33,3 +33,19 @@ ggplot2::ggplot(data = data, mapping = ggplot2::aes(x=age, y=charges, color=smok
    ggplot2::ggtitle(label = "Charges vs. Age") +
    ggplot2::geom_point() +
    ggplot2::scale_color_manual(values = c("green", "red"))
+
+
+# ---- exercise_5
+dynamic_plot <- function(data, x.variable, y.variable, color.variable) {
+   ggplot2::ggplot(data = data, 
+                   mapping = ggplot2::aes_string(x=x.variable, 
+                                                 y=y.variable, 
+                                                 color=color.variable)) +
+      ggplot2::geom_point()
+}
+
+dynamic_plot(data = data, 
+             x.variable = "bmi", 
+             y.variable = "charges", 
+             color.variable = "sex")
+
