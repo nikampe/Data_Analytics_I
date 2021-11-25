@@ -32,3 +32,8 @@ The library *ggplot2* is used for plotting various graphics.
 ```
 
 # Exercise 1 {-}
+The number of observations in the data set corresponds to the number of rows and the 
+number of covariates collected corresponds to the number of columns. Thus there are 
+1204 observations and 7 covariates.
+```{r exercise_1, echo=TRUE, warning=FALSE,}
+```

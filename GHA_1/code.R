@@ -9,3 +9,8 @@
 # ---- requirements
 library(ggplot2)
 load("GHA/insurance-all.RData")
+
+
+# ---- exercise_1
+(n_obs <- nrow(data))
+(n_cov <- ncol(data))
