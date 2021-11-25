@@ -18,3 +18,11 @@ load("GHA/insurance-all.RData")
 
 # ---- exercise_2
 (max_children <- max(data$children))
+
+
+# ---- exercise_3
+pct_smokers_by_region <- aggregate(data$smoker == "yes", 
+                                   by=list(region=data$region), 
+                                   FUN=function(x) sum(x)/length(x))
+
+pct_smokers_by_region[which.min(pct_smokers_by_region$x),]

@@ -42,3 +42,9 @@ number of covariates collected corresponds to the number of columns minus one
 The highest number of children who are covered by one health insurance is 5.
 ```{r exercise_2, echo=TRUE, warning=FALSE,}
 ```
+
+# Exercise 3 {-}
+The region *northwest* has the lowest share of smokers. The share of smokers in this 
+region is 16.9 percent.
+```{r exercise_3, echo=TRUE, warning=FALSE,}
+```
