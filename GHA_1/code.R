@@ -1,5 +1,5 @@
 #######################################################################################
-# AUTOHRS
+# AUTHORS
 #######################################################################################
 # Cyril Janak, 16-611-287
 # Jonas Husmann, 16-610-917
@@ -26,3 +26,10 @@ pct_smokers_by_region <- aggregate(data$smoker == "yes",
                                    FUN=function(x) sum(x)/length(x))
 
 pct_smokers_by_region[which.min(pct_smokers_by_region$x),]
+
+
+# ---- exercise_4
+ggplot2::ggplot(data = data, mapping = ggplot2::aes(x=age, y=charges, color=smoker)) +
+   ggplot2::ggtitle(label = "Charges vs. Age") +
+   ggplot2::geom_point() +
+   ggplot2::scale_color_manual(values = c("green", "red"))

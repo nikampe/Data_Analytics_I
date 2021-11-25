@@ -35,16 +35,28 @@ The library *ggplot2* is used for plotting various graphics.
 The number of observations in the data set corresponds to the number of rows and the 
 number of covariates collected corresponds to the number of columns minus one 
 (dependent variable). Thus there are 1204 observations and 6 covariates.
-```{r exercise_1, echo=TRUE, warning=FALSE,}
+```{r exercise_1, echo=TRUE, warning=FALSE}
 ```
 
 # Exercise 2 {-}
 The highest number of children who are covered by one health insurance is 5.
-```{r exercise_2, echo=TRUE, warning=FALSE,}
+```{r exercise_2, echo=TRUE, warning=FALSE}
 ```
 
 # Exercise 3 {-}
 The region *northwest* has the lowest share of smokers. The share of smokers in this 
 region is 16.9 percent.
-```{r exercise_3, echo=TRUE, warning=FALSE,}
+```{r exercise_3, echo=TRUE, warning=FALSE}
+```
+
+# Exercise 4 {-}
+According to the plot, two patterns can be identified in the data. It can be seen that 
+the older the primary beneficiary, the higher the individual medical costs billed by 
+health insurance. This makes sense because the likelihood of health problems increases 
+with age. Furthermore, it can be seen that the average medical costs billed by health 
+insurance are higher for the group of smokers than for the group of non-smokers. This 
+also makes sense, as smoking increases the likelihood of health problems. It can be 
+assumed that the area where the average medical costs billed by health insurance of 
+smokers and non-smokers overlap can be explained by other covariates.
+```{r exercise_4, echo=TRUE, warning=FALSE, fig.align='center'}
 ```
