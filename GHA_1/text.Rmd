@@ -1,6 +1,6 @@
 ---
 author: "Cyril Janak, Jonas Husmann, Niklas Kampe, Robin Scherrer"
-date: "13 5 2020"
+date: "01.12.2021"
 geometry: "left= 2cm, right = 2cm, top = 2.5cm, bottom = 2.5cm"
 output: 
    pdf_document:
@@ -56,7 +56,7 @@ health insurance. This makes sense because the likelihood of health problems inc
 with age. Furthermore, it can be seen that the average medical costs billed by health 
 insurance are higher for the group of smokers than for the group of non-smokers. This 
 also makes sense, as smoking increases the likelihood of health problems. It can be 
-assumed that the area where the average medical costs billed by health insurance of 
+assumed that the area where the medical costs billed by health insurance of 
 smokers and non-smokers overlap can be explained by other covariates.
 ```{r exercise_4, echo=TRUE, warning=FALSE, fig.align='center'}
 ```
