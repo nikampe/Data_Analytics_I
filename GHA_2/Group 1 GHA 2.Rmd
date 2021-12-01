@@ -1,0 +1,44 @@
+---
+author: "Cyril Janak, Jonas Husmann, Niklas Kampe, Robin Scherrer"
+date: "01.12.2021"
+geometry: "left= 2cm, right = 2cm, top = 2.5cm, bottom = 2.5cm"
+output: 
+   pdf_document:
+      includes:
+         in_header: rmarkdown/style.sty
+      number_sections: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+knitr::read_chunk('Group 1 GHA 2.R')
+```
+
+\thispagestyle{empty}
+\input{rmarkdown/titlepage.tex}
+
+\pagebreak
+
+\thispagestyle{empty}
+\tableofcontents
+
+\pagebreak
+\setcounter{page}{1}
+
+# Requirements {-}
+To solve the following tasks, the required libraries and the data sets are loaded 
+first.
+```{r requirements, echo=TRUE, warning=FALSE}
+```
+
+# Exercise 1 {-}
+There are 214 observations in the training data set and 143 observations in the test 
+data set.
+```{r exercise_1, echo=TRUE, warning=FALSE}
+```
+
+# Exercise 2 {-}
+The average grade is ~11.64, the minimum grade is 4 and the maximum grade is 19. All 
+numbers were calculated using the training data.
+```{r exercise_2, echo=TRUE, warning=FALSE}
+```
