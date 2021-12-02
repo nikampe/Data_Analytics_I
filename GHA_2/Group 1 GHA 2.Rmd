@@ -51,4 +51,10 @@ numbers were calculated using the training data.
 # Exercise 4 {-}
 When doing causal modeling there are independent variables (x_1,..,x_n) which are considered as the cause of the dependent variable (y), therefore one would expect a direct impact of the independent variables on the dependent variable. For predictive modelling the goal is to establish a method that allows to make predictions of the dependent variable (y) based on the known independent variables (x_1,..,x_n). 
 
+# Exercise 5 {-}
+```{r exercise_5, echo=TRUE, warning=FALSE}
+```
 
+# Exercise 6 {-}
+```{r exercise_6, echo=TRUE, warning=FALSE}
+```
