@@ -35,25 +35,28 @@ load("GHA/student-mat-test.RData")
     labs(title="Histogram Final Math Grade", x="Final Math Grade", y="Count"))
 
 # ---- exercise_5
-(OLS1 <- lm(G3 ~ . ,
-            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher)))
+OLS1 <- lm(G3 ~ . ,
+            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher))
 (summary(OLS1))
 
-(OLS2 <- lm(G3 ~ . + .^2, 
-            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher)))
+OLS2 <- lm(G3 ~ . + .^2, 
+            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher))
 (summary(OLS2))
-
-# ---- exercise_6
-(OLS3 <- lm(G3 ~ . , 
-            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, famrel, failures, famsup,internet)))
-(summary(OLS3))
-
-(OLS4 <- lm(G3 ~ . + .^2, 
-            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, famrel, failures, famsup,internet)))
-(summary(OLS4))
 
 MSE_IS_OLS1 <- mean((train$G3 - OLS1$fitted.values)^2)
 MSE_IS_OLS2 <- mean((train$G3 - OLS2$fitted.values)^2)
+(MSE_IS <- data.frame(model = c("OLS1_IS", "OLS2_IS"), 
+                      MSE = c(MSE_IS_OLS1, MSE_IS_OLS2)))
+
+# ---- exercise_6
+OLS3 <- lm(G3 ~ . , 
+            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, famrel, failures, famsup,internet))
+(summary(OLS3))
+
+OLS4 <- lm(G3 ~ . + .^2, 
+            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, famrel, failures, famsup,internet))
+(summary(OLS4))
+
 MSE_IS_OLS3 <- mean((train$G3 - OLS3$fitted.values)^2)
 MSE_IS_OLS4 <- mean((train$G3 - OLS4$fitted.values)^2)
 
