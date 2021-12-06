@@ -50,11 +50,13 @@ MSE_IS_OLS2 <- mean((train$G3 - OLS2$fitted.values)^2)
 
 # ---- exercise_6
 OLS3 <- lm(G3 ~ . , 
-            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, famrel, failures, famsup,internet))
+            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, 
+                        famrel, failures, famsup,internet))
 (summary(OLS3))
 
 OLS4 <- lm(G3 ~ . + .^2, 
-            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, famrel, failures, famsup,internet))
+            data=select(train, G3, Medu, Fedu, studytime, schoolsup, higher, Pstatus, 
+                        famrel, failures, famsup,internet))
 (summary(OLS4))
 
 MSE_IS_OLS3 <- mean((train$G3 - OLS3$fitted.values)^2)
@@ -73,9 +75,11 @@ fit_OLS4 <- predict(OLS4, newdata = test)
 MSE_OOS_OLS4 <- mean((test$G3 - fit_OLS4)^2)
 
 (MSE_IS <- data.frame(model = c("OLS1_IS", "OLS2_IS", "OLS3_IS", "OLS4_IS"), 
-                      MSE = c(MSE_IS_OLS1, MSE_IS_OLS2, MSE_IS_OLS3, MSE_IS_OLS4)))
+                      MSE = c(MSE_IS_OLS1, MSE_IS_OLS2, 
+                              MSE_IS_OLS3, MSE_IS_OLS4)))
 (MSE_OOS <- data.frame(model = c("OLS1_OOS", "OLS2_OOS", "OLS3_OOS", "OLS4_OOS"), 
-                       MSE = c(MSE_OOS_OLS1, MSE_OOS_OLS2, MSE_OOS_OLS3, MSE_OOS_OLS4)))
+                       MSE = c(MSE_OOS_OLS1, MSE_OOS_OLS2, 
+                               MSE_OOS_OLS3, MSE_OOS_OLS4)))
 
 (ggplot(MSE_IS, aes(model, MSE)) +
   geom_col(color = "red", fill = 'black', alpha = 0.2) +

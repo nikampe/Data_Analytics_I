@@ -49,13 +49,24 @@ numbers were calculated using the training data.
 
 
 # Exercise 4 {-}
-When doing causal modeling there are independent variables (x_1,..,x_n) which are considered as the cause of the dependent variable (y), therefore one would expect a direct impact of the independent variables on the dependent variable. For predictive modelling the goal is to establish a method that allows to make predictions of the dependent variable (y) based on the known independent variables (x_1,..,x_n). 
+<!-- When doing causal modeling there are independent variables (x_1,..,x_n) which are considered as the cause of the dependent variable (y), therefore one would expect a direct impact of the independent variables on the dependent variable. For predictive modelling the goal is to establish a method that allows to make predictions of the dependent variable (y) based on the known independent variables (x_1,..,x_n).  -->
+
+Predictive modeling is used to predict an object of interest (e.g. forecasting or 
+nowcasting) by using predictors (covariates). The goal is to get as good out-of-sample 
+predictions as possible (e.g. predicting unemployment). The goal of causal modeling, 
+in contrast, is to establish a causal relationship between the explanatory variables 
+(covariates) and the object of interest (e.g. causal effect of inflation, GDP per 
+capita, ... on unemployment). While for predictive modeling only the full rank 
+condition is mandatory, for causal modeling both the full rank condition and the 
+exclusion restriction must be fulfilled.
 
 # Exercise 5 {-}
 
 ```{r exercise_5, echo=TRUE, warning=FALSE}
 ```
 In order to elaborate the in-sample fit of the two models, we define the coefficient of determination R^2 as well as the in-sample MSE as the key fit determinants. From the results, we can observe that the first linear model with five covariates has a R^2 of 0.13 and an in-sample MSE of 8.99, whereas the second linear model including the first order interactions has an R^2 of 0.15 and an in-sample MSE of 8.38. From these results, we can conclude that the second model performns better in both fit coefficients, which is in accordance with the general result that an increased number of covariates often leads to better in-sample fits (or delivers the same model fit). Nevertheless, the both R^2s aand MSEs are relatively low/high, latter compared to the level of the dependent variable, which concludes an overall weak model fit.
+
+\pagebreak
 
 # Exercise 6 {-}
 ```{r exercise_6, echo=TRUE, warning=FALSE}
