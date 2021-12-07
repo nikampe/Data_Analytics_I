@@ -76,9 +76,25 @@ R2_OOS_OLS2 <- "-"
 R2_OOS_OLS3 <- "-"
 R2_OOS_OLS4 <- "-"
 
-(MSE_R2_IS_OOS <- data.frame(model = c("OLS1_IS", "OLS2_IS", "OLS3_IS", "OLS4_IS", "OLS1_OOS", "OLS2_OOS", "OLS3_OOS", "OLS4_OOS"), 
-                      MSE = c(MSE_IS_OLS1, MSE_IS_OLS2, MSE_IS_OLS3, MSE_IS_OLS4, MSE_OOS_OLS1, MSE_OOS_OLS2, MSE_OOS_OLS3, MSE_OOS_OLS4),
-                      R2 = c(R2_IS_OLS1, R2_IS_OLS2, R2_IS_OLS3, R2_IS_OLS4, R2_OOS_OLS1, R2_OOS_OLS2, R2_OOS_OLS3, R2_OOS_OLS4)))
+(MSE_R2_IS_OOS <- data.frame(model = 
+                    c("OLS1_IS", "OLS2_IS", "OLS3_IS", "OLS4_IS", 
+                      "OLS1_OOS", "OLS2_OOS", "OLS3_OOS", "OLS4_OOS"), 
+                    MSE = c(MSE_IS_OLS1, MSE_IS_OLS2, MSE_IS_OLS3, MSE_IS_OLS4, 
+                            MSE_OOS_OLS1, MSE_OOS_OLS2, MSE_OOS_OLS3, MSE_OOS_OLS4),
+                    R2 = c(R2_IS_OLS1, R2_IS_OLS2, R2_IS_OLS3, R2_IS_OLS4, 
+                           R2_OOS_OLS1, R2_OOS_OLS2, R2_OOS_OLS3, R2_OOS_OLS4)))
+
+(ggplot(slice(MSE_R2_IS_OOS, 1:4), aes(model, MSE)) +
+    geom_col(col="red", fill="lightgrey",) +
+    ggtitle("In-Sample MSEs - Model 1-4") +
+    xlab("") +
+    theme_classic())
+
+(ggplot(slice(MSE_R2_IS_OOS, 5:8), aes(model, MSE)) +
+  geom_col(col="red", fill="lightgrey",) +
+  ggtitle("Out-of-Sample MSEs - Model 1-4") +
+  xlab("") +
+  theme_classic())
 
 (ggplot(train, aes(x=OLS1$fitted.values, y = G3)) +
     geom_point() +
