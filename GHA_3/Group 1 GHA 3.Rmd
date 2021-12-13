@@ -31,5 +31,11 @@ first.
 ```{r requirements, echo=TRUE, warning=FALSE}
 ```
 
-# Exercise 1 {-}
-
+# Exercise 3 {-}
+To find the best two linear predictors, lasso was used. First, a 5-fold cross 
+validation was performed to determine the optimal lambda parameter. Then, the largest 
+coefficients of the lasso model in terms of their absolute value were determined, since 
+they have the greatest influence on the prediction. The best two linear predictors are 
+therefore the two websites *staples.com* and *officedepot.com*.
+```{r exercise_3, echo=TRUE, warning=FALSE}
+```
