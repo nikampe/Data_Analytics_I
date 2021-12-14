@@ -41,16 +41,28 @@ The household with id = 1297 (first row of the 2006 sample) spends most of the t
 ```{r exercise_2, echo=TRUE, warning=FALSE}
 ```
 
+\pagebreak
+
 # Exercise 3 {-}
 To find the best two linear predictors, lasso was used. First, a 5-fold cross 
-validation was performed to determine the optimal lambda parameter. Then, the largest 
-coefficients of the lasso model in terms of their absolute value were determined, since 
-they have the greatest influence on the prediction. The best two linear predictors are 
-therefore the two websites *staples.com* and *officedepot.com*.
-```{r exercise_3, echo=TRUE, warning=FALSE}
+validation was performed to determine the optimal lambda parameter. In the plot below 
+the result of the cross validation is shown. Where the minimum of the MSE is reached is 
+the optimal value of the lambda parameter.
+```{r exercise_3.1, echo=TRUE, warning=FALSE}
+```
+
+\pagebreak
+
+Then, the largest coefficients in terms of their absolute value of the lasso model with
+the optimal lambda from before were determined, since they have the greatest influence 
+on the prediction. The best two linear predictors are therefore the two websites 
+*staples.com* and *officedepot.com*.
+```{r exercise_3.2, echo=TRUE, warning=FALSE}
 ```
 
 # Exercise 4 {-}
 
 ```{r exercise_4, echo=TRUE, warning=FALSE}
 ```
+
+What we can see in our plot is that our "all variables" model predicts a significant amount of values < 0, which is not reasonable. Additionally, the outliers are much higher (almost 40k versus 20k). For the Lasso model, however, the smallest prediction for money spending is 1'705, which is also not reasonable. In comparison the Lasso model is still more reasonable.
