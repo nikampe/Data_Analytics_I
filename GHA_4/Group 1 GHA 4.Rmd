@@ -30,3 +30,13 @@ To solve the following tasks, the required libraries and the data sets are loade
 first.
 ```{r requirements, echo=TRUE, warning=FALSE}
 ```
+
+# Exercise 1 {-}
+The share of males who consume soft drugs is ~29.18%
+```{r exercise_1, echo=TRUE, warning=FALSE}
+```
+
+# Exercise 2 {-}
+The difference between the share of male and female hard drug consumers is ~2.74%
+```{r exercise_2, echo=TRUE, warning=FALSE}
+```
