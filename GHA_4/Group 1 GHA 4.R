@@ -1,4 +1,4 @@
-  #######################################################################################
+#######################################################################################
 # AUTHORS
 #######################################################################################
 # Cyril Janak, 16-611-287
@@ -15,9 +15,9 @@ load("GHA/drugs.RData")
 
 # ---- exercise_1
 (m_s_drug <- (nrow(drugs[drugs$Gender=="male" & drugs$Soft_Drug==T,]) / 
-   nrow(drugs[drugs$Gender=="male",])) |>
-   {\(x) round(x*100, digits = 2)}() |>
-   paste0("%"))
+   nrow(drugs[drugs$Gender=="male",]) * 100) %>%
+   round(., digits = 2) %>%
+   paste0(., "%"))
 
 # ---- exercise_2
 m_h_drug <- nrow(drugs[drugs$Gender=="male" & drugs$Hard_Drug==T,]) / 
@@ -26,16 +26,19 @@ m_h_drug <- nrow(drugs[drugs$Gender=="male" & drugs$Hard_Drug==T,]) /
 f_h_drug <- nrow(drugs[drugs$Gender=="female" & drugs$Hard_Drug==T,]) / 
    nrow(drugs[drugs$Gender=="female",])
 
-(diff_h_drug <- (m_h_drug - f_h_drug) |>
-      {\(x) round(x*100, digits = 2)}() |>
-      paste0("%"))
+(diff_h_drug <- ((m_h_drug - f_h_drug) * 100) %>%
+      round(., digits = 2) %>%
+      paste0(., "%"))
 
 # ---- exercise_3
-share_softdrugs_16_17 <- round((nrow(drugs[drugs$Age=="16-17 years" & drugs$Soft_Drug==T,]) /
+share_softdrugs_16_17 <- round((nrow(drugs[drugs$Age=="16-17 years" & 
+                                              drugs$Soft_Drug==T,]) /
    nrow(drugs[drugs$Age=="16-17 years",]))*100, digits = 2)
-share_softdrugs_18_19 <- round((nrow(drugs[drugs$Age=="18-19 years" & drugs$Soft_Drug==T,]) /
+share_softdrugs_18_19 <- round((nrow(drugs[drugs$Age=="18-19 years" & 
+                                              drugs$Soft_Drug==T,]) /
    nrow(drugs[drugs$Age=="18-19 years",]))*100, digits = 2)
-share_softdrugs_20_24 <- round((nrow(drugs[drugs$Age=="20-24 years" & drugs$Soft_Drug==T,]) /
+share_softdrugs_20_24 <- round((nrow(drugs[drugs$Age=="20-24 years" & 
+                                              drugs$Soft_Drug==T,]) /
    nrow(drugs[drugs$Age=="20-24 years",]))*100, digits = 2)
 
 (shares_softdrugs <- data.frame(

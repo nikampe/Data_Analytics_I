@@ -41,6 +41,8 @@ The difference between the share of male and female hard drug consumers is ~2.74
 ```{r exercise_2, echo=TRUE, warning=FALSE}
 ```
 
+\pagebreak
+
 # Exercise 3 {-}
 From the shares of soft drug consumption for each age group, one can observe that only 16-17 year-olds consume soft drugs. Therefore, the consumption of soft drugs is decreasing in age, but not strictly as the groups of 18-19 and 20-24 year-olds are not consuming any soft drugs at all.
 ```{r exercise_3, echo=TRUE, warning=FALSE}
