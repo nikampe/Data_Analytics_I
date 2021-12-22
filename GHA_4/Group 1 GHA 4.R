@@ -11,6 +11,7 @@ library(rpart)
 library(rpart.plot)
 library(dplyr)
 library(stringr)
+library(ggplot2)
 
 load("GHA/drugs.RData")
 
@@ -99,4 +100,90 @@ print(paste0("The average in the full sample is: ", mean_full))
 print(paste0("The difference is approx: ", diff_mean))
 
 # ---- exercise_6
-print("")
+set.seed(11111)
+#adjusting the soft_drug column to be a logical to make it easier work with it
+drugs$Soft_Drug = as.logical(drugs$Soft_Drug)
+#defining sample sizes and number of runs
+sample_sizes = c(100, 500, 2500) 
+N_runs = c(100, 500, 2500)
+
+#creating the function that we will use
+# within the function first create the samples which will then be used for the 
+# mean calculations
+subsample_mean = function(data, sample_size, draws) {
+   samples = matrix(replicate(draws, sample(x = c(1:length(data)),
+                                            size = sample_size, replace = FALSE)),
+                    nrow = sample_size)
+   means = rep(NA,draws)
+   for(i in 1:draws){
+      means[i] = mean(data[c(samples[,i])])
+   }
+   return(means)
+}
+
+
+#means_list is used to store the retrieved means
+means_list = list()
+#creating empty sample_size to use for the j in the for loop
+sample_size = list()
+#creating counter for the for loop
+counter = 0
+for (i in N_runs) {
+   counter = counter + 1
+   t = matrix(data = NA, nrow = N_runs[counter], ncol = 3)
+   k=0
+   for (j in sample_sizes) { 
+      k = k+1
+      #storing the function results
+      t[, k] = subsample_mean(data = drugs$Soft_Drug,
+                              sample_size = j, draws = i)
+   }
+   means_list[[counter]] = t
+}
+
+
+#fixing draws at 500
+draws500 = data.frame(means_list[[2]])
+colnames(draws500) = c("subsample_a","subsample_b","subsample_c")
+tail(draws500)
+
+#fixing subsample size at 500
+subsample500 = data.frame(means_list[[1]][,2],means_list[[2]][,2], means_list[[3]][,2]) 
+colnames(subsample500) = c("draws_a","draws_b","draws_c")
+tail(subsample500)
+
+#plotting for the 500 draws with the 3 different subsample sizes
+ggplot(data = draws500) +
+   geom_density(aes(x = subsample_a, color = "100")) +
+   geom_density(aes(x = subsample_b, color = "500")) +
+   geom_density(aes(x = subsample_c, color = "2500")) +
+   scale_color_manual("", values = c("100" =  "blue" , 
+                                     "500" = "red", 
+                                     "2500" = "green3")) +
+   scale_fill_manual("", values = c("100" =  "blue", 
+                                    "500" = "red", 
+                                    "2500" = "green3")) +
+   xlab("mean soft drug consumption") +
+   ylab("density") +
+   theme(legend.title = element_blank(),
+         legend.position = c(1, 1),
+         legend.justification = c("right", "top"),
+         legend.box.background = element_rect())
+
+#plotting for the 500 subsample size with 3 different draw numbers
+ggplot(data = subsample500) +
+   geom_density(aes(x = draws_a, color = "100")) +
+   geom_density(aes(x = draws_b, color = "500")) +
+   geom_density(aes(x = draws_c, color = "2500")) +
+   scale_color_manual("", values = c("100" =  "blue" , 
+                                     "500" = "red", 
+                                     "2500" = "green3")) +
+   scale_fill_manual("", values = c("100" =  "blue", 
+                                    "500" = "red", 
+                                    "2500" = "green3")) +
+   xlab("mean soft drug consumption") +
+   ylab("density") +
+   theme(legend.title = element_blank(),
+         legend.position = c(1, 1),
+         legend.justification = c("right", "top"),
+         legend.box.background = element_rect())

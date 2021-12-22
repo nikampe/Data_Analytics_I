@@ -58,7 +58,6 @@ tbd
 ```{r exercise_5, echo=TRUE, warning=FALSE}
 ```
 
-
 # Exercise 6 {-}
 When keeping the numbers of draws fixed at 500 one can see a higher density around the mean of the whole sample (see exercise 5) with an increasing sample size. If the sample size is kept fixed at 500 and the number of draws (100, 500, 2500) is varied one can observe that the curve is smoother for higher number of draws. 
 ```{r exercise_6, echo=TRUE, warning=FALSE}
