@@ -11,7 +11,7 @@ output:
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE)
-knitr::read_chunk('Group 1 GHA 4.R')
+knitr::read_chunk('Group 1 GHA 4_v2.R')
 ```
 
 \thispagestyle{empty}
