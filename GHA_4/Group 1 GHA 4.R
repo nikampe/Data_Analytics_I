@@ -12,6 +12,7 @@ library(rpart.plot)
 library(dplyr)
 library(stringr)
 library(ggplot2)
+library(qpcR)
 
 load("GHA/drugs.RData")
 
@@ -148,7 +149,7 @@ colnames(draws500) = c("subsample_a","subsample_b","subsample_c")
 tail(draws500)
 
 #fixing subsample size at 500
-subsample500 = data.frame(means_list[[1]][,2],means_list[[2]][,2], means_list[[3]][,2]) 
+subsample500 = data.frame(qpcR:::cbind.na(means_list[[1]][,2],means_list[[2]][,2], means_list[[3]][,2]))
 colnames(subsample500) = c("draws_a","draws_b","draws_c")
 tail(subsample500)
 
