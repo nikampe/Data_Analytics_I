@@ -54,7 +54,6 @@ The chi-squared test results in a X-squared statistic of 9.40 at a p-value of 0.
 ```
 
 # Exercise 5 {-}
-tbd
 ```{r exercise_5, echo=TRUE, warning=FALSE}
 ```
 
